@@ -35,7 +35,18 @@ h1{text-align:center;margin-bottom:20px;font-size:2rem;font-weight:900;}
 .news-item .time{font-size:12px;color:gray;margin-bottom:5px;}
 
 /* PROFILS JOUEURS */
-.player-header{width:100%;background:rgba(0,0,0,0.45);padding:15px;border-radius:20px;display:flex;align-items:center;gap:12px;color:white;font-family:Arial, sans-serif;}
+.player-header{
+    width:100%;
+    background:rgba(0,0,0,0.45);
+    padding:20px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+    font-family:Arial, sans-serif;
+    margin-bottom:16px; /* espace entre profils */
+}
 .player-photo{position:relative;width:70px;height:70px;border-radius:50%;overflow:hidden;}
 .player-photo img{width:100%;height:100%;object-fit:cover;}
 .player-photo .flag{position:absolute;bottom:-2px;right:-2px;width:28px;height:28px;border-radius:50%;border:2px solid white;}
@@ -80,7 +91,7 @@ h1{text-align:center;margin-bottom:20px;font-size:2rem;font-weight:900;}
     <h1>Profil Joueurs</h1>
     <button id="editPlayersBtn" style="display:none;background:#1da3ff;color:white;padding:8px 12px;border:none;border-radius:8px;margin-bottom:12px;cursor:pointer;">Modifier joueurs</button>
     <div id="playersContainer" style="display:flex;flex-direction:column;gap:12px;">
-        <!-- 7 joueurs ici -->
+        <!-- 7 profils séparés -->
         <div class="player-header">
             <div class="player-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Unai_Sim%C3%B3n_%28cropped%29.jpg" alt="Unai Simon"><img class="flag" src="https://flagcdn.com/w40/es.png" alt="Espagne"></div>
             <div class="player-info"><div class="player-name">Unai Simon</div><div class="player-club">Athletic Bilbao · Goalkeeper</div><div class="player-country">Espagne</div><div class="player-age">Âge : 28 (11.06.1997)</div></div>
@@ -111,11 +122,6 @@ h1{text-align:center;margin-bottom:20px;font-size:2rem;font-weight:900;}
         </div>
     </div>
 </div>
-
-<!-- Les pages BUTEURS, MATCHS, FANS restent identiques à avant -->
-<!-- … ici on met le reste du code Buteurs, Matchs, Fans et JS comme avant … -->
-
-</main>
 
 <!-- MENU BAS -->
 <nav class="bottom-nav">
@@ -193,7 +199,7 @@ editPlayersBtn.addEventListener("click",()=>{
     });
 });
 
-// Ici ajouter JS Buteurs, Matchs, Fans comme avant…
+// Ici ajouter JS Buteurs, Matchs, Fans si nécessaire…
 </script>
 
 </body>
