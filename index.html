@@ -89,9 +89,7 @@ td input{width:60px;padding:4px;text-align:center;border-radius:4px;border:1px s
 <button class="btn-back" onclick="goBack('panel-profil')">← Retour</button>
 <h1>Profil Joueurs</h1>
 <button id="editPlayersBtn" style="display:none;background:#1da3ff;color:white;padding:10px 14px;border:none;border-radius:10px;margin-bottom:12px;cursor:pointer;">Modifier joueurs</button>
-<div class="players-grid" id="playersGrid">
-<!-- 6 joueurs générés via JS -->
-</div>
+<div class="players-grid" id="playersGrid"></div>
 </div>
 
 <!-- BUTEURS -->
@@ -155,6 +153,32 @@ const editButeursBtn=document.getElementById("editButeursBtn");
 const buteursInputs=document.querySelectorAll("#panel-buteurs input");
 const playersGrid=document.getElementById("playersGrid");
 
+// Générer 6 joueurs par défaut
+let defaultPlayers=[
+{name:"Unai Simon",club:"Athletic Bilbao · GK",country:"Espagne",age:28,img:"https://upload.wikimedia.org/wikipedia/commons/7/7b/Unai_Sim%C3%B3n_%28cropped%29.jpg"},
+{name:"Kylian Mbappé",club:"Paris SG · Attaquant",country:"France",age:26,img:"https://upload.wikimedia.org/wikipedia/commons/c/c3/Kylian_Mbapp%C3%A9_2022.jpg"},
+{name:"Lionel Messi",club:"Inter Miami · Attaquant",country:"Argentine",age:36,img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Lionel_Messi_20180626.jpg"},
+{name:"Neymar",club:"Al-Hilal · Attaquant",country:"Brésil",age:31,img:"https://upload.wikimedia.org/wikipedia/commons/2/2e/Neymar_2018.jpg"},
+{name:"Luka Modric",club:"Real Madrid · Milieu",country:"Croatie",age:38,img:"https://upload.wikimedia.org/wikipedia/commons/0/03/Luka_Modric_2018.jpg"},
+{name:"Mohamed Salah",club:"Liverpool · Attaquant",country:"Egypte",age:31,img:"https://upload.wikimedia.org/wikipedia/commons/0/09/Mohamed_Salah_2018.jpg"}
+];
+
+function loadPlayers(){
+  playersGrid.innerHTML="";
+  defaultPlayers.forEach((p,i)=>{
+    let card=document.createElement("div");
+    card.className="player-card";
+    card.innerHTML=`<img src="${p.img}">
+    <button class="add-image-btn">Image</button>
+    <div class="player-name" contenteditable="false">${p.name}</div>
+    <div class="player-club" contenteditable="false">${p.club}</div>
+    <div class="player-country" contenteditable="false">${p.country}</div>
+    <div class="player-age" contenteditable="false">Âge : ${p.age}</div>`;
+    playersGrid.appendChild(card);
+  });
+}
+loadPlayers();
+
 function activateAdmin(){
   adminActive=true;
   localStorage.setItem("admin","on");
@@ -164,7 +188,15 @@ function activateAdmin(){
   editButeursBtn.style.display="block";
   buteursInputs.forEach(i=>i.disabled=false);
   document.querySelectorAll(".team-name-match,.score-match,.meta").forEach(e=>e.contentEditable=true);
-  document.querySelectorAll(".add-image-btn").forEach(b=>b.style.display="block");
+  document.querySelectorAll(".player-name,.player-club,.player-country,.player-age").forEach(e=>e.contentEditable=true);
+  document.querySelectorAll(".add-image-btn").forEach(b=>{
+    b.style.display="block";
+    b.onclick=()=>{
+      let card=b.parentElement;
+      let url=prompt("Entrez le lien de l'image:");
+      if(url){card.querySelector("img").src=url;}
+    };
+  });
 }
 
 // Admin Login
@@ -174,7 +206,37 @@ document.getElementById("checkPassword").onclick=()=>{
   if(input.value==="5525"){input.classList.remove("wrong");input.classList.add("correct");activateAdmin();document.getElementById("adminForm").style.display="none";}
   else {input.classList.remove("correct");input.classList.add("wrong");}
 };
-</script>
 
+// Actualités
+let news = JSON.parse(localStorage.getItem("news")) || [];
+function displayNews(){
+  const list=document.getElementById("newsList"); list.innerHTML="";
+  news.forEach((n,i)=>{
+    let div=document.createElement("div");
+    div.className="news-item";
+    div.innerHTML=`${n.image?`<img src="${n.image}">`:""}<div class="source">${n.source}</div><div class="title">${n.title}</div><div class="description">${n.description}</div><div class="time">${n.time}</div>`;
+    list.prepend(div);
+  });
+}
+displayNews();
+document.getElementById("showAddFormBtn").onclick=()=>{document.getElementById("addNewsDiv").style.display="block";};
+document.getElementById("addNewsBtn").onclick=()=>{
+  let n={source:source.value,title:title.value,description:description.value,image:imageURL.value,time:time.value};
+  news.push(n); localStorage.setItem("news",JSON.stringify(news)); displayNews();
+  source.value=title.value=description.value=imageURL.value=time.value="";
+  document.getElementById("addNewsDiv").style.display="none";
+};
+
+// Matchs récents
+const template=document.getElementById('matchTemplate');
+const container=document.getElementById('cardsContainer');
+const addBtn=document.getElementById('addMatchRecentBtn');
+function enableLogoClick(card){const logos=card.querySelectorAll('.flag-match img');logos.forEach(img=>{img.onclick=()=>{const url=prompt("Entrez le lien de l'image:");if(url) img.src=url;};});}
+enableLogoClick(template);
+addBtn.onclick=()=>{
+  const clone=template.cloneNode(true);
+  clone.removeAttribute('id'); container.appendChild(clone); enableLogoClick(clone);
+};
+</script>
 </body>
 </html>
