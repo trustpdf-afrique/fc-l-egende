@@ -73,22 +73,13 @@
 <body>
 
 <header>FC LÉGENDE</header>
-
-<!-- Admin button & form -->
-<button id="adminBtn">Ad</button>
-<div id="adminForm" aria-hidden="true">
-  <input id="adminPassword" type="password" placeholder="Code admin (5525)">
-  <button id="checkPassword">Valider</button>
-</div>
-
+ 
 <main>
   <!-- ACTUALITÉS -->
   <section id="panel-actu" class="panel active">
     <h1>ACTUALITÉS</h1>
 
     <div style="margin-bottom:10px">
-      <button id="showAddFormBtn" style="display:none">Ajouter une actualité</button>
-    </div>
 
     <div id="addNewsDiv" style="display:none" class="card">
       <input id="source" placeholder="Source">
@@ -108,8 +99,7 @@
   <section id="panel-profil" class="panel">
     <h1>PROFILS JOUEURS</h1>
     <div style="margin-bottom:10px">
-      <button id="editPlayersBtn" style="display:none">Modifier joueurs</button>
-    </div>
+     
     <div id="playersGrid" class="players-grid"></div>
   </section>
 
@@ -117,8 +107,7 @@
   <section id="panel-buteurs" class="panel">
     <h1>BUTEURS</h1>
     <div style="margin-bottom:8px">
-      <button id="editButeursBtn">Modifier</button>
-    </div>
+    
     <div class="card">
       <table id="buteursTable">
         <thead><tr><th>Joueur</th><th>Buts</th></tr></thead>
@@ -154,8 +143,7 @@
 
         <div class="meta" contenteditable="false">Infos du match…</div>
         <div class="match-actions">
-          <button class="btn-danger deleteMatch">Supprimer</button>
-        </div>
+          
       </section>
     </div>
 
