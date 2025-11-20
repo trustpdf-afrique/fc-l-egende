@@ -84,6 +84,89 @@
             margin-top: 4px;
             text-transform: uppercase;
         }
+
+        /* STYLES POUR ACTUALITÉS */
+        .actualite-card{
+            width:100%;
+            max-width:450px;
+            background:white;
+            border-radius:22px;
+            overflow:hidden;
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            margin:auto 0 20px 0;
+        }
+        .actualite-card img{
+            width:100%;
+            height:230px;
+            object-fit: cover;
+            object-position: center;
+            display:block;
+        }
+        .content{
+            padding:18px 20px;
+        }
+        .content h2{
+            font-size:23px;
+            font-weight:700;
+            color:#0b1f3f;
+            margin:0 0 12px 0;
+            line-height:1.35;
+        }
+        .content p{
+            color:#5a5a5a;
+            font-size:15px;
+            line-height:1.45;
+            margin:0;
+        }
+
+        /* STYLES POUR PROFILS JOUEURS */
+        .player-card{
+            background:#8f8f8f;
+            border-radius:18px;
+            padding:30px 20px 22px;
+            margin:30px 0;
+            text-align:center;
+            color:white;
+            position:relative;
+            box-shadow:0 6px 12px rgba(0,0,0,0.15);
+        }
+        .player-avatar{
+            width:90px;
+            height:90px;
+            border-radius:50%;
+            overflow:hidden;
+            border:5px solid rgba(255,255,255,0.3);
+            margin:-65px auto 10px;
+            background:#ddd;
+        }
+        .player-avatar img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .player-name{
+            font-size:20px;
+            font-weight:600;
+            margin:5px 0;
+        }
+        .player-meta{
+            font-size:14px;
+            opacity:0.95;
+            margin:3px 0;
+        }
+        .captain-badge{
+            position:absolute;
+            left:-10px;          
+            top:50%;
+            transform:translateY(-50%);
+            background:#ffd700;
+            color:#000;
+            font-size:12px;
+            font-weight:bold;
+            padding:4px 8px;
+            border-radius:10px;
+            box-shadow:0 2px 4px rgba(0,0,0,0.25);
+        }
     </style>
 </head>
 
@@ -93,26 +176,106 @@
     <div class="header">FC LÉGENDE</div>
 
     <!-- PAGES -->
+
+    <!-- ACCUEIL -->
     <div id="accueil" class="page">
         <h2>Accueil</h2>
         <p>Ici nous allons mettre la description de l'application et la photo du Président.</p>
     </div>
 
+    <!-- ACTUALITÉS -->
     <div id="actus" class="page active">
         <h2>Actualités</h2>
-        <p>Ici nous allons mettre les actualités du club.</p>
+        <div class="actualite-card">
+            <img src="https://i.postimg.cc/44DpCn5b/IMG-20251115-123637-972.jpg" alt="actualité">
+            <div class="content">
+                <h2>
+                    La Fabrique des mots technos, un concours stimulant pour les écoles inscrites à la 35e édition
+                </h2>
+                <p>
+                    Ce concours s’adresse aux élèves de la 1re année du primaire jusqu’à la 2e année du secondaire (8e…)
+                </p>
+            </div>
+        </div>
     </div>
 
+    <!-- PROFIL -->
     <div id="profil" class="page">
-        <h2>Profil des joueurs</h2>
-        <p>Ici nous allons afficher la liste des joueurs.</p>
+        <h2>PROFILS JOUEURS</h2>
+        <!-- Tous tes joueurs ici, exactement comme tu les as donnés -->
+        <article class="player-card">
+            <div class="captain-badge">★</div>
+            <div class="player-avatar"><img src="https://picsum.photos/200?1"></div>
+            <div class="player-name">Unai Simon</div>
+            <div class="player-meta">Athletic Bilbao · GK</div>
+            <div class="player-meta">Espagne</div>
+            <div class="player-meta">Âge : 28</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?2"></div>
+            <div class="player-name">Kylian Mbappé</div>
+            <div class="player-meta">Paris SG · Attaquant</div>
+            <div class="player-meta">France</div>
+            <div class="player-meta">Âge : 26</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?3"></div>
+            <div class="player-name">Lionel Messi</div>
+            <div class="player-meta">Inter Miami · Attaquant</div>
+            <div class="player-meta">Argentine</div>
+            <div class="player-meta">Âge : 36</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?4"></div>
+            <div class="player-name">Cristiano Ronaldo</div>
+            <div class="player-meta">Al Nassr · Attaquant</div>
+            <div class="player-meta">Portugal</div>
+            <div class="player-meta">Âge : 39</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?5"></div>
+            <div class="player-name">Neymar Jr</div>
+            <div class="player-meta">Al-Hilal · Attaquant</div>
+            <div class="player-meta">Brésil</div>
+            <div class="player-meta">Âge : 33</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?6"></div>
+            <div class="player-name">Kevin De Bruyne</div>
+            <div class="player-meta">Man City · Milieu</div>
+            <div class="player-meta">Belgique</div>
+            <div class="player-meta">Âge : 33</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?7"></div>
+            <div class="player-name">Erling Haaland</div>
+            <div class="player-meta">Man City · Attaquant</div>
+            <div class="player-meta">Norvège</div>
+            <div class="player-meta">Âge : 24</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?8"></div>
+            <div class="player-name">Luka Modrić</div>
+            <div class="player-meta">Real Madrid · Milieu</div>
+            <div class="player-meta">Croatie</div>
+            <div class="player-meta">Âge : 38</div>
+        </article>
+        <article class="player-card">
+            <div class="player-avatar"><img src="https://picsum.photos/200?9"></div>
+            <div class="player-name">Mohamed Salah</div>
+            <div class="player-meta">Liverpool · Attaquant</div>
+            <div class="player-meta">Égypte</div>
+            <div class="player-meta">Âge : 32</div>
+        </article>
     </div>
 
+    <!-- MATCH -->
     <div id="match" class="page">
         <h2>Matchs</h2>
         <p>Ici nous allons mettre les matchs récents et à venir.</p>
     </div>
 
+    <!-- BUTEURS -->
     <div id="buteurs" class="page">
         <h2>Buteurs</h2>
         <p>Ici nous allons mettre la liste des meilleurs buteurs.</p>
@@ -120,27 +283,22 @@
 
     <!-- ONGLET BAS -->
     <div class="tabs">
-
         <div class="tab tab-actus selected" onclick="showPage('actus', this)">
             <i class="fas fa-newspaper"></i>
             <span class="label">Actus</span>
         </div>
-
         <div class="tab tab-profil" onclick="showPage('profil', this)">
             <i class="fas fa-user"></i>
             <span class="label">Profil</span>
         </div>
-
         <div class="tab tab-match" onclick="showPage('match', this)">
             <i class="fas fa-futbol"></i>
             <span class="label">Match</span>
         </div>
-
         <div class="tab tab-buteurs" onclick="showPage('buteurs', this)">
             <i class="fas fa-bullseye"></i>
             <span class="label">Buteurs</span>
         </div>
-
         <div class="tab tab-accueil" onclick="showPage('accueil', this)">
             <i class="fas fa-home"></i>
             <span class="label">Accueil</span>
