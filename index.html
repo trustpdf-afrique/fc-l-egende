@@ -1,124 +1,161 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>FC LÉGENDE</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FC LÉGENDE</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f4f4f4;
-    }
+    <!-- Font Awesome pour icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
-    /* Bande bleue en haut */
-    header {
-        background: #0066cc;
-        color: white;
-        text-align: center;
-        padding: 15px;
-        font-size: 22px;
-        font-weight: bold;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
 
-    /* Contenu */
-    .content {
-        padding: 20px;
-    }
+        /* EN-TÊTE */
+        .header {
+            background: #0057b7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-    /* Barre de navigation en bas */
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 10px 0;
-        display: flex;
-        justify-content: space-around;
-        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-    }
+        /* CONTENU DES PAGES */
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
 
-    .nav-item {
-        text-align: center;
-        font-size: 12px;
-        color: #333;
-    }
+        /* ONGLET BAS */
+        .tabs {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
 
-    .nav-btn {
-        width: 55px;
-        height: 55px;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-    }
+        .tab {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            margin: 0 8px;
+            color: white;
+            transition: transform 0.2s;
+            padding: 5px;
+        }
 
-    /* Couleurs des cases */
-    .actus { background: #ff6b6b; }
-    .profil { background: #4da6ff; }
-    .match { background: #2ecc71; }
-    .buteurs { background: #f1c40f; }
-    .accueil { background: #b57bff; }
+        .tab:hover {
+            transform: scale(1.2);
+        }
 
-    /* Icônes */
-    .nav-btn img {
-        width: 28px;
-        height: 28px;
-    }
-</style>
+        .selected {
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        /* COULEURS DES ONGLES */
+        .tab-actus { background: #ff6666; }
+        .tab-profil { background: #3399ff; }
+        .tab-match { background: #33cc66; }
+        .tab-buteurs { background: #ffcc33; color: black; }
+        .tab-accueil { background: #9966ff; }
+
+        /* Labels sous icônes */
+        .tab .label {
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>FC LÉGENDE</header>
+    <!-- EN-TÊTE -->
+    <div class="header">FC LÉGENDE</div>
 
-<div class="content">
-    <h2>Accueil</h2>
-    <p>Ici nous allons mettre la description de l'application et la photo du Président.</p>
-</div>
-
-<!-- Barre de navigation -->
-<div class="bottom-nav">
-
-    <div class="nav-item">
-        <div class="nav-btn actus">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/news.png">
-        </div>
-        ACTUS
+    <!-- PAGES -->
+    <div id="accueil" class="page">
+        <h2>Accueil</h2>
+        <p>Ici nous allons mettre la description de l'application et la photo du Président.</p>
     </div>
 
-    <div class="nav-item">
-        <div class="nav-btn profil">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/user.png">
-        </div>
-        PROFIL
+    <div id="actus" class="page active">
+        <h2>Actualités</h2>
+        <p>Ici nous allons mettre les actualités du club.</p>
     </div>
 
-    <div class="nav-item">
-        <div class="nav-btn match">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/football.png">
-        </div>
-        MATCH
+    <div id="profil" class="page">
+        <h2>Profil des joueurs</h2>
+        <p>Ici nous allons afficher la liste des joueurs.</p>
     </div>
 
-    <div class="nav-item">
-        <div class="nav-btn buteurs">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/goal.png">
-        </div>
-        BUTEURS
+    <div id="match" class="page">
+        <h2>Matchs</h2>
+        <p>Ici nous allons mettre les matchs récents et à venir.</p>
     </div>
 
-    <div class="nav-item">
-        <div class="nav-btn accueil">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png">
-        </div>
-        ACCUEIL
+    <div id="buteurs" class="page">
+        <h2>Buteurs</h2>
+        <p>Ici nous allons mettre la liste des meilleurs buteurs.</p>
     </div>
 
-</div>
+    <!-- ONGLET BAS -->
+    <div class="tabs">
+
+        <div class="tab tab-actus selected" onclick="showPage('actus', this)">
+            <i class="fas fa-newspaper"></i>
+            <span class="label">Actus</span>
+        </div>
+
+        <div class="tab tab-profil" onclick="showPage('profil', this)">
+            <i class="fas fa-user"></i>
+            <span class="label">Profil</span>
+        </div>
+
+        <div class="tab tab-match" onclick="showPage('match', this)">
+            <i class="fas fa-futbol"></i>
+            <span class="label">Match</span>
+        </div>
+
+        <div class="tab tab-buteurs" onclick="showPage('buteurs', this)">
+            <i class="fas fa-bullseye"></i>
+            <span class="label">Buteurs</span>
+        </div>
+
+        <div class="tab tab-accueil" onclick="showPage('accueil', this)">
+            <i class="fas fa-home"></i>
+            <span class="label">Accueil</span>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId, element) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+    </script>
 
 </body>
 </html>
