@@ -1,159 +1,159 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matchs récents</title>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #eef2f5;
-        font-family: Arial, sans-serif;
-    }
-
-    h2 {
-        text-align: center;
-        background: #0b7cff;
-        color: white;
-        padding: 15px 0;
-        margin: 0;
-        font-size: 22px;
-        font-weight: bold;
-    }
-
-    .match {
-        width: 92%;
-        margin: 15px auto;
-        background: #ffffff;
-        border-radius: 12px;
-        padding: 14px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-
-    .win { border-left: 5px solid #2ecc71; }
-    .lose { border-left: 5px solid #e74c3c; }
-    .draw { border-left: 5px solid #7f8c8d; }
-
-    .teams {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .team {
-        display: flex;
-        align-items: center;
-        width: 40%;
-        gap: 8px;
-        font-size: 15px;
-        font-weight: 600;
-    }
-
-    .team img {
-        width: 30px;
-    }
-
-    .score {
-        width: 20%;
-        text-align: center;
-        font-size: 22px;
-        font-weight: bold;
-    }
-
-    .buteurs {
-        margin-top: 10px;
-        font-size: 13px;
-        color: #444;
-        line-height: 18px;
-    }
-
-    .date {
-        margin-top: 10px;
-        font-size: 12px;
-        color: #777;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FC LÉGENDE</title>
+    <!-- Font Awesome pour icônes modernes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+        /* EN-TÊTE */
+        .header {
+            background: #0057b7;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        /* CONTENU */
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        /* ONGLET BAS */
+        .tabs {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: transparent;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+        .tab {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 28px;
+            margin: 0 6px;
+            color: white;
+            transition: transform 0.2s;
+        }
+        .tab:hover {
+            transform: scale(1.2);
+        }
+        .selected {
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .tab-actus { background: #ff6666; }
+        .tab-profil { background: #3399ff; }
+        .tab-match { background: #33cc66; }
+        .tab-buteurs { background: #ffcc33; color: black; }
+        .tab-accueil { background: #9966ff; }
+            .tab {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            margin: 0 8px;
+            color: white;
+            transition: transform 0.2s;
+            padding: 5px;
+        }
+        .tab .label {
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
 </style>
 </head>
+<body><!-- EN-TÊTE -->
+<div class="header">FC LÉGENDE</div>
 
-<body>
-
-<h2>Matchs récents</h2>
-
-<!-- 🟩 MATCH – VICTOIRE -->
-<div class="match win">
-    <div class="teams">
-        <div class="team">
-            <img src="espagne.png">
-            Espagne
-        </div>
-
-        <div class="score">4 - 1</div>
-
-        <div class="team" style="justify-content: flex-end;">
-            Géorgie
-            <img src="georgie.png">
-        </div>
-    </div>
-
-    <div class="buteurs">
-        <b>ESP :</b> Morata (12’), Williams (30’), Olmo (62’), Pedri (78’)<br>
-        <b>GEO :</b> Mikautadze (44’)
-    </div>
-
-    <div class="date">30.06.2024 • 19:00</div>
+<!-- PAGES -->
+<div id="accueil" class="page">
+    <h2>Accueil</h2>
+    <p>Ici nous allons mettre la description de l'application et la photo du Président.</p>
 </div>
 
-
-<!-- 🟥 MATCH – DÉFAITE -->
-<div class="match lose">
-    <div class="teams">
-        <div class="team">
-            <img src="espagne.png">
-            Espagne
-        </div>
-
-        <div class="score">0 - 2</div>
-
-        <div class="team" style="justify-content: flex-end;">
-            Portugal
-            <img src="portugal.png">
-        </div>
-    </div>
-
-    <div class="buteurs">
-        <b>ESP :</b> Aucun<br>
-        <b>POR :</b> Ronaldo (18’), Bruno (67’)
-    </div>
-
-    <div class="date">12.07.2024 • 20:45</div>
+<div id="actus" class="page active">
+    <h2>Actualités</h2>
+    <p>Ici nous allons mettre les actualités du club.</p>
 </div>
 
-
-<!-- 🟦 MATCH – NUL -->
-<div class="match draw">
-    <div class="teams">
-        <div class="team">
-            <img src="espagne.png">
-            Espagne
-        </div>
-
-        <div class="score">2 - 2</div>
-
-        <div class="team" style="justify-content: flex-end;">
-            Italie
-            <img src="italie.png">
-        </div>
-    </div>
-
-    <div class="buteurs">
-        <b>ESP :</b> Morata (11’), Yamal (72’)<br>
-        <b>ITA :</b> Chiesa (33’), Dimarco (79’)
-    </div>
-
-    <div class="date">08.07.2024 • 21:00</div>
+<div id="profil" class="page">
+    <h2>Profil des joueurs</h2>
+    <p>Ici nous allons afficher la liste des joueurs.</p>
 </div>
+
+<div id="match" class="page">
+    <h2>Matchs</h2>
+    <p>Ici nous allons mettre les matchs récents et à venir.</p>
+</div>
+
+<div id="buteurs" class="page">
+    <h2>Buteurs</h2>
+    <p>Ici nous allons mettre la liste des meilleurs buteurs.</p>
+</div>
+
+<!-- ONGLET BAS AVEC ICONES MODERNES -->
+<div class="tabs">
+    <div class="tab tab-actus selected" onclick="showPage('actus', this)">
+        <i class="fas fa-newspaper"></i>
+        <span class="label">Actus</span>
+    </div>
+    <div class="tab tab-profil" onclick="showPage('profil', this)">
+        <i class="fas fa-user"></i>
+        <span class="label">Profil</span>
+    </div>
+    <div class="tab tab-match" onclick="showPage('match', this)">
+        <i class="fas fa-futbol"></i>
+        <span class="label">Match</span>
+    </div>
+    <div class="tab tab-buteurs" onclick="showPage('buteurs', this)">
+        <i class="fas fa-bullseye"></i>
+        <span class="label">Buteurs</span>
+    </div>
+    <div class="tab tab-accueil" onclick="showPage('accueil', this)">
+        <i class="fas fa-home"></i>
+        <span class="label">Accueil</span>
+    </div>
+</div>
+    
+    <div class="tab tab-profil" onclick="showPage('profil', this)"><i class="fas fa-user"></i></div>
+    <div class="tab tab-match" onclick="showPage('match', this)"><i class="fas fa-futbol"></i></div>
+    <div class="tab tab-buteurs" onclick="showPage('buteurs', this)"><i class="fas fa-bullseye"></i></div>
+    <div class="tab tab-accueil" onclick="showPage('accueil', this)"><i class="fas fa-home"></i></div>
+</div>
+
+<script>
+    function showPage(pageId, element) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(pageId).classList.add('active');
+
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('selected'));
+        element.classList.add('selected');
+    }
+</script>
 
 </body>
 </html>
