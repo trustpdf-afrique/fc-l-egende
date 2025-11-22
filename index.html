@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FC LÉGENDE</title>
 
-    <!-- Font Awesome pour icônes -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 
     <style>
@@ -25,7 +25,7 @@
             font-weight: bold;
         }
 
-        /* CONTENU DES PAGES */
+        /* PAGES */
         .page {
             display: none;
             padding: 20px;
@@ -77,12 +77,50 @@
         .tab-buteurs { background: #ffcc33; color: black; }
         .tab-accueil { background: #9966ff; }
 
-        /* Labels sous icônes */
+        /* Labels */
         .tab .label {
             font-size: 10px;
             font-weight: bold;
             margin-top: 4px;
             text-transform: uppercase;
+        }
+
+        /* --- STYLE ACTUALITÉS --- */
+        .actualite-card{
+            width:100%;
+            max-width:450px;
+            background:white;
+            border-radius:22px;
+            overflow:hidden;
+            box-shadow:0 4px 12px rgba(0,0,0,0.12);
+            margin:auto;
+        }
+
+        .actualite-card img{
+            width:100%;
+            height:230px;
+            object-fit:cover;
+            object-position:center;
+            display:block;
+        }
+
+        .actualite-card .content{
+            padding:18px 20px;
+        }
+
+        .actualite-card .content h2{
+            font-size:23px;
+            font-weight:700;
+            color:#0b1f3f;
+            margin:0 0 12px 0;
+            line-height:1.35;
+        }
+
+        .actualite-card .content p{
+            color:#5a5a5a;
+            font-size:15px;
+            line-height:1.45;
+            margin:0;
         }
     </style>
 </head>
@@ -92,93 +130,45 @@
     <!-- EN-TÊTE -->
     <div class="header">FC LÉGENDE</div>
 
-    <!-- PAGES -->
+    <!-- ACCUEIL -->
     <div id="accueil" class="page">
         <h2>ACCUEIL</h2>
         <p>Ici nous allons mettre la description de l'application et la photo du Président.</p>
     </div>
 
+    <!-- ACTUALITÉS -->
     <div id="actus" class="page active">
         <h2>ACTUALITÉS</h2>
-        <p><style>
-    body{
-        margin:0;
-        padding:20px;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background:#f2f7ff;
-        display:flex;
-        justify-content:center;
-    }
 
-    .actualite-card{
-        width:100%;
-        max-width:450px;
-        background:white;
-        border-radius:22px;
-        overflow:hidden;
-        box-shadow:0 4px 12px rgba(0,0,0,0.12);
-    }
+        <div class="actualite-card">
+            <img src="https://i.postimg.cc/44DpCn5b/IMG-20251115-123637-972.jpg" alt="actualité">
 
-    /* ⭐ IMAGE TOUJOURS PARFAITE COMME TON EXEMPLE ⭐ */
-    .actualite-card img{
-        width:100%;
-        height:230px;         /* même hauteur que le modèle */
-        object-fit: cover;    /* coupe comme dans ton image */
-        object-position: center; /* centre l’image parfaitement */
-        display:block;
-    }
+            <div class="content">
+                <h2>
+                    La Fabrique des mots technos, un concours stimulant pour les écoles inscrites à la 35e édition
+                </h2>
 
-    .content{
-        padding:18px 20px;
-    }
+                <p>
+                    Ce concours s’adresse aux élèves de la 1re année du primaire jusqu’à la 2e année du secondaire…
+                </p>
+            </div>
+        </div>
 
-    .content h2{
-        font-size:23px;
-        font-weight:700;
-        color:#0b1f3f;
-        margin:0 0 12px 0;
-        line-height:1.35;
-    }
-
-    .content p{
-        color:#5a5a5a;
-        font-size:15px;
-        line-height:1.45;
-        margin:0;
-    }
-</style>
-</head>
-<body>
-
-<div class="actualite-card">
-
-    <!-- ⭐ TON IMAGE AVEC CADRAGE PARFAIT ⭐ -->
-    <img src="https://i.postimg.cc/44DpCn5b/IMG-20251115-123637-972.jpg" alt="actualité">
-
-    <div class="content">
-        <h2>
-            La Fabrique des mots technos, un concours stimulant pour les écoles inscrites à la 35e édition
-        </h2>
-
-        <p>
-            Ce concours s’adresse aux élèves de la 1re année du primaire jusqu’à la 2e année du secondaire (8e…)
-        </p>
     </div>
 
-</div>
-    .</p>
-    </div>
-
+    <!-- PROFIL -->
     <div id="profil" class="page">
         <h2>Profil des joueurs</h2>
         <p>Ici nous allons afficher la liste des joueurs.</p>
     </div>
 
+    <!-- MATCHS -->
     <div id="match" class="page">
         <h2>MATCHS</h2>
         <p>Ici nous allons mettre les matchs récents et à venir.</p>
     </div>
 
+    <!-- BUTEURS -->
     <div id="buteurs" class="page">
         <h2>BUTEURS</h2>
         <p>Ici nous allons mettre la liste des meilleurs buteurs.</p>
@@ -224,4 +214,4 @@
     </script>
 
 </body>
-            </html>
+</html>
